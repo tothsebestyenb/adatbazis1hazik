@@ -1,0 +1,19 @@
+CREATE TABLE Tanfolyam (
+tkod INT PRIMARY KEY,
+megnevezés VARCHAR(100) NOT NULL,
+tipus VARCHAR2(30),
+ar INT CHECK (ar > 0)
+);
+
+CREATE TABLE Resztvevo (
+tajszam CHAR(13) PRIMARY KEY,
+nev VARCHAR2(80) NOT NULL,
+lakcim VARCHAR2(150)
+);
+
+CREATE TABLE Befizetes (
+befizetes_id INT PRIMARY KEY,
+tkod INT REFERENCES Tanfolam(tkod),
+diak_id CHAR(13) REFERENCES Resztvevo(tajszam),
+osszeg INT CHECK (osszeg > 0)
+);
