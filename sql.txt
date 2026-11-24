@@ -1,0 +1,32 @@
+1.
+SELECT nev,tipus
+FROM alloviz
+WHERE tipus='morotvató'
+
+2.
+SELECT nev
+FROM alloviz
+WHERE vizgyujto > 100
+
+3.
+SELECT avg(terulet) AS "átlagos terület"
+FROM alloviz
+WHERE tipus='bányató'
+GROUP BY tipus
+
+4.
+SELECT nev FROM telepulesgps
+WHERE id=382
+
+5.
+SELECT nev
+FROM telepulesgps
+WHERE nev LIKE 'S%'
+
+6.
+SELECT DISTINCT tipus
+FROM alloviz
+
+7.
+SELECT * FROM telepulesgps t
+INNER JOIN helykapcs h ON telepulesgps.id = helykapcs.
